@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/libusb/examples
+/libusb/MinGW32
+/libusb/MinGW64
+/libusb/MS64
+/libusb/libusb-1.0.def
+/libusb/README.txt

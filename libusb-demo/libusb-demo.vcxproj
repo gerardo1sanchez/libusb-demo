@@ -54,13 +54,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>.\libusb-1.0.22;C:\gtkmm\include\atkmm-1.6\;C:\gtkmm\lib\gtkmm-2.4\include;C:\gtkmm\include\pangomm-1.4;C:\gtkmm\include\freetype2;C:\gtkmm\include;C:\gtkmm\include\cairomm-1.0;C:\gtkmm\lib\pangomm-1.4\include;C:\gtkmm\lib\gdkmm-2.4\include;C:\gtkmm\include\gdkmm-2.4;C:\gtkmm\include\giomm-2.4;C:\gtkmm\lib\sigc++-2.0\include;C:\gtkmm\include\sigc++-2.0\;C:\gtkmm\lib\glibmm-2.4\include;C:\gtkmm\include\glibmm-2.4;C:\gtkmm\include\atk-1.0;C:\gtkmm\include\gtk-2.0;C:\gtkmm\include\glib-2.0;C:\gtkmm\lib\glib-2.0\include;C:\gtkmm\include\cairo;C:\gtkmm\include\pango-1.0;C:\gtkmm\lib\gtk-2.0\include;C:\gtkmm\include\gdk-pixbuf-2.0;C:\gtkmm\include\gtkmm-2.4</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\libusb\include\libusb-1.0;C:\gtkmm\include\atkmm-1.6\;C:\gtkmm\lib\gtkmm-2.4\include;C:\gtkmm\include\pangomm-1.4;C:\gtkmm\include\freetype2;C:\gtkmm\include;C:\gtkmm\include\cairomm-1.0;C:\gtkmm\lib\pangomm-1.4\include;C:\gtkmm\lib\gdkmm-2.4\include;C:\gtkmm\include\gdkmm-2.4;C:\gtkmm\include\giomm-2.4;C:\gtkmm\lib\sigc++-2.0\include;C:\gtkmm\include\sigc++-2.0\;C:\gtkmm\lib\glibmm-2.4\include;C:\gtkmm\include\glibmm-2.4;C:\gtkmm\include\atk-1.0;C:\gtkmm\include\gtk-2.0;C:\gtkmm\include\glib-2.0;C:\gtkmm\lib\glib-2.0\include;C:\gtkmm\include\cairo;C:\gtkmm\include\pango-1.0;C:\gtkmm\lib\gtk-2.0\include;C:\gtkmm\include\gdk-pixbuf-2.0;C:\gtkmm\include\gtkmm-2.4</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>atkmm-vc100-1_6.lib;sigc-vc100-2_0.lib;glib-2.0.lib;glibmm-vc100-2_4.lib;atk-1.0.lib;cairo.lib;gdk_pixbuf-2.0.lib;gtk-win32-2.0.lib;pango-1.0.lib;gobject-2.0.lib;gtkmm-vc100-2_4.lib;libusb-1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\gtkmm\lib;.\libusb-1.0.22\Win32\Debug\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\gtkmm\lib;..\libusb\MS32\dll</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

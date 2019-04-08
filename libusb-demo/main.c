@@ -11,7 +11,7 @@ enum
   NUM_COLUMNS
 };
 
-#include <libusb/libusb.h>
+#include <libusb.h>
 
 static GtkTreeModel *create_model(void) {
 	GtkListStore *store;
@@ -188,6 +188,9 @@ GtkWidget *do_list_store (GtkWidget *do_widget) {
 		GtkWidget *msgbox;
 		gtk_widget_show_all (window);
 		msgbox = gtk_message_dialog_new(GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE, "%s", "El siguiente es un programa muy sencillo realizado con la unica intension de demostrar habilidades basicas con el lenguaje C, GTK y la libreria libusb");
+		g_signal_connect_swapped(msgbox, "response",
+			G_CALLBACK(gtk_widget_destroy),
+			msgbox);
 		gtk_widget_show_all(msgbox);
 	}
 	else
