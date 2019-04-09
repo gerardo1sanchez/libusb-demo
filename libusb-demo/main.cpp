@@ -1,4 +1,10 @@
+
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
 #include <gtk/gtk.h>
+#include <libusb.h>
 
 static GtkWidget *window = NULL;
 static GtkTreeModel *model = NULL;
@@ -10,8 +16,6 @@ enum
   COLUMN_DESCRIPTION,
   NUM_COLUMNS
 };
-
-#include <libusb.h>
 
 static GtkTreeModel *create_model(void) {
 	GtkListStore *store;
@@ -184,9 +188,7 @@ GtkWidget *do_list_store (GtkWidget *do_widget) {
 		GtkWidget *msgbox;
 		gtk_widget_show_all (window);
 		msgbox = gtk_message_dialog_new(GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE, "%s", "El siguiente es un programa muy sencillo realizado con la unica intension de demostrar habilidades basicas en los siguientes topicos:\r\n\r\n1. lenguaje C\r\n2. GTK\r\n3. libusb\r\n4. libcurl\r\n5. Git/GitHub\r\n6. Visual Studio 2017");
-		g_signal_connect_swapped(msgbox, "response",
-			G_CALLBACK(gtk_widget_destroy),
-			msgbox);
+		g_signal_connect_swapped(msgbox, "response", G_CALLBACK(gtk_widget_destroy), msgbox);
 		gtk_widget_show_all(msgbox);
 	}
 	else
@@ -196,6 +198,40 @@ GtkWidget *do_list_store (GtkWidget *do_widget) {
 	}
 
 	return window;
+}
+
+size_t writeFunction(void *ptr, size_t size, size_t nmemb, std::string* data) {
+	data->append((char*)ptr, size * nmemb);
+	return size * nmemb;
+}
+
+int requestUsbInfo(uint16_t vendorId, uint16_t productId) {
+	CURL* curl = curl_easy_init();
+	if (!curl) return 0;
+	curl_easy_setopt(curl, CURLOPT_URL, "https://pci-ids.ucw.cz/read/PC/0795");
+	curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
+	curl_easy_setopt(curl, CURLOPT_USERPWD, "user:pass");
+	curl_easy_setopt(curl, CURLOPT_USERAGENT, "curl/7.42.0");
+	curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 50L);
+	curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
+
+	std::string response_string;
+	std::string header_string;
+	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeFunction);
+	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_string);
+	curl_easy_setopt(curl, CURLOPT_HEADERDATA, &header_string);
+
+	char* url;
+	long response_code;
+	double elapsed;
+	curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+	curl_easy_getinfo(curl, CURLINFO_TOTAL_TIME, &elapsed);
+	curl_easy_getinfo(curl, CURLINFO_EFFECTIVE_URL, &url);
+
+	curl_easy_perform(curl);
+	curl_easy_cleanup(curl);
+	curl = NULL;
+	return 1;
 }
 
 #include "minwindef.h"

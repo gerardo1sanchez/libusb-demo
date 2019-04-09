@@ -54,7 +54,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\libusb\include\libusb-1.0;C:\gtkmm\include\atkmm-1.6\;C:\gtkmm\lib\gtkmm-2.4\include;C:\gtkmm\include\pangomm-1.4;C:\gtkmm\include\freetype2;C:\gtkmm\include;C:\gtkmm\include\cairomm-1.0;C:\gtkmm\lib\pangomm-1.4\include;C:\gtkmm\lib\gdkmm-2.4\include;C:\gtkmm\include\gdkmm-2.4;C:\gtkmm\include\giomm-2.4;C:\gtkmm\lib\sigc++-2.0\include;C:\gtkmm\include\sigc++-2.0\;C:\gtkmm\lib\glibmm-2.4\include;C:\gtkmm\include\glibmm-2.4;C:\gtkmm\include\atk-1.0;C:\gtkmm\include\gtk-2.0;C:\gtkmm\include\glib-2.0;C:\gtkmm\lib\glib-2.0\include;C:\gtkmm\include\cairo;C:\gtkmm\include\pango-1.0;C:\gtkmm\lib\gtk-2.0\include;C:\gtkmm\include\gdk-pixbuf-2.0;C:\gtkmm\include\gtkmm-2.4</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\curl-7.64.1\builds\libcurl-vc-x86-release-static-ipv6-sspi-winssl\include;..\libusb\include\libusb-1.0;C:\gtkmm\include\atkmm-1.6\;C:\gtkmm\lib\gtkmm-2.4\include;C:\gtkmm\include\pangomm-1.4;C:\gtkmm\include\freetype2;C:\gtkmm\include;C:\gtkmm\include\cairomm-1.0;C:\gtkmm\lib\pangomm-1.4\include;C:\gtkmm\lib\gdkmm-2.4\include;C:\gtkmm\include\gdkmm-2.4;C:\gtkmm\include\giomm-2.4;C:\gtkmm\lib\sigc++-2.0\include;C:\gtkmm\include\sigc++-2.0\;C:\gtkmm\lib\glibmm-2.4\include;C:\gtkmm\include\glibmm-2.4;C:\gtkmm\include\atk-1.0;C:\gtkmm\include\gtk-2.0;C:\gtkmm\include\glib-2.0;C:\gtkmm\lib\glib-2.0\include;C:\gtkmm\include\cairo;C:\gtkmm\include\pango-1.0;C:\gtkmm\lib\gtk-2.0\include;C:\gtkmm\include\gdk-pixbuf-2.0;C:\gtkmm\include\gtkmm-2.4</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -88,7 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
