@@ -23,11 +23,7 @@ static GtkTreeModel *create_model(void) {
 	char vendor_id[5], product_id[5];
 
 	/* create list store */
-	store = gtk_list_store_new (NUM_COLUMNS,
-								G_TYPE_STRING,
-								G_TYPE_STRING,
-								G_TYPE_STRING);
-
+	store = gtk_list_store_new (NUM_COLUMNS, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 
 	r = libusb_init(NULL);
 	if (r < 0) return NULL;
