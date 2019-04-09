@@ -233,7 +233,7 @@ int requestUsbInfo(uint16_t vendorId, uint16_t productId) {
 	curl = NULL;
 	return 1;
 }
-
+//http://pci-ids.ucw.cz/read/PC/0795
 #include "minwindef.h"
 
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
