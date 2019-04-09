@@ -183,7 +183,7 @@ GtkWidget *do_list_store (GtkWidget *do_widget) {
 	{
 		GtkWidget *msgbox;
 		gtk_widget_show_all (window);
-		msgbox = gtk_message_dialog_new(GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE, "%s", "El siguiente es un programa muy sencillo realizado con la unica intension de demostrar habilidades basicas con el lenguaje C, GTK y la libreria libusb");
+		msgbox = gtk_message_dialog_new(GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE, "%s", "El siguiente es un programa muy sencillo realizado con la unica intension de demostrar habilidades basicas en los siguientes topicos:\r\n\r\n1. lenguaje C\r\n2. GTK\r\n3. libusb\r\n4. libcurl\r\n5. Git/GitHub\r\n6. Visual Studio 2017");
 		g_signal_connect_swapped(msgbox, "response",
 			G_CALLBACK(gtk_widget_destroy),
 			msgbox);
